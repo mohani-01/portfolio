@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(to right, rgb(55, 55, 77), rgb(162, 162, 255));
+    background: linear-gradient(to right, rgb(44, 60, 93), rgb(162, 162, 255));
     margin: 0;
 }
 
@@ -30,6 +30,34 @@ li {
 .navbar-container > li {
     margin: 1rem 0;
 }
+@keyframes border {
+    0% {
+        border: none;
+        background-color: transparent;
+
+    }
+     24% {
+
+        border-top: 2px solid brown;
+    }
+
+    50% {
+        border-right: 2px solid brown;
+
+    }
+
+    75% {
+        border-bottom: 2px solid brown;
+    } 
+
+    100% {
+        border: 2px solid brown;
+        background-color: rgb(177, 177, 231);
+
+    }
+    
+}
+
 
 .link {
     text-decoration: none;
@@ -40,11 +68,22 @@ li {
     /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
     font-weight: 500;
     font-size: 20px;
+    border-radius: 5rem;
+    border: none;
+    background-color: transparent;
+    animation-name: border;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-play-state: paused;
+    animation-iteration-count: infinite;
 }
 
-.link:hover {
-    border-color: brown;
-    color: brown;
+
+.link:hover   {
+    animation-play-state: running; 
+
+    /* /* border-color: brown; */
+    /* color: brown; */ 
 
 }
 
@@ -95,3 +134,39 @@ li {
     color: rgb(255, 216, 216);
     text-shadow: 2px 0  2px black;
 }
+
+
+@keyframes round {
+    0% {
+        text-shadow: 0px 0px 2px blue;
+    }
+   
+    40% {
+        text-shadow: 3px 0px 2px blue;
+
+    }
+    60% {
+        text-shadow: 3px 3px 2px blue;
+    }
+    80% {
+        text-shadow: 0px 3px 2px blue;
+    }
+    100% {
+        text-shadow: 0px 0px 2px blue;
+
+    }
+}
+.animation {
+    /* text-shadow: 0px 0px 2px blue; */
+    animation-duration: 2s;
+    animation-name: round;
+    animation-fill-mode: forward;
+    animation-play-state: paused;
+    animation-iteration-count: infinite;
+
+}
+
+.animation:hover {
+    animation-play-state: running;
+}
+
