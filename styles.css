@@ -79,3 +79,19 @@ li {
 .container > div  {
     padding: 100px 0; 
 }
+
+.about-me {
+    font-family: 'Satisfy', cursive;
+    font-size: 35px;
+    max-width: 1000px;
+    margin: auto;
+    
+}
+.user {
+    display: flex;
+    
+    padding: 1rem 50px;
+    align-items: center;
+    color: rgb(255, 216, 216);
+    text-shadow: 2px 0  2px black;
+}
