@@ -1,0 +1,79 @@
+body {
+    background: linear-gradient(to right, rgb(55, 55, 77), rgb(162, 162, 255));
+    margin: 0;
+}
+
+.navbar {
+    /* border: 2px solid yellow; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    position: sticky;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right, rgb(188, 224, 255), rgb(149, 202, 249)) ;
+}
+
+
+li {
+    list-style-type: none !important;
+}
+
+.navbar-container {
+    display: flex;
+    text-align: center;
+}
+
+.navbar-container > li {
+    margin: 1rem 0;
+}
+
+.link {
+    text-decoration: none;
+    color: rgb(19, 31, 15);
+    padding: .5rem;
+    margin: 1rem .5rem;
+    border: 2px solid transparent;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.link:hover {
+    border-color: brown;
+    color: brown;
+}
+
+
+
+.project {
+    display: flex;
+    flex-direction: column;
+}
+
+.project > .left  {
+    display: grid;
+    grid-template-areas: "img desc";
+
+}
+
+.project > .right {
+    display: grid;
+    grid-template-areas: "desc img";
+    gap: 30px;
+}
+
+.image {
+    grid-area: img;
+}
+
+.description {
+    grid-area: desc;
+}
+
+
+.container > div  {
+    padding: 100px 0; 
+}
