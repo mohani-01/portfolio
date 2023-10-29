@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans&display=swap');
 
 body {
     position: relative;
@@ -12,7 +12,7 @@ body > * {
     box-sizing: border-box;
 }
 li {
-    list-style-type: none !important;
+    /* list-style-type: none !important; */
 }
 
 a {
@@ -60,19 +60,47 @@ header {
     top: 0px;
     border: 1px solid #00000e;
     z-index: 200;
-    background-color: #00000e ;
     /* width: 100%; */
     max-width: 100dvw;
 
     /* border: 2px solid yellow; */
 
 }
-
 .navbar {
-    display: block;
+    background-color: #00000e !important;
+
+}
+
+
+
+.container-fluid{
+    justify-content: flex-end !important;
+}
+.navbar-nav{
+    margin-left: auto;
+    border: 2px solid black;
+}
+
+.nav-link {
+    /* border: 2px solid red; */
+    color: white;
+    font-size: 18px;
+    border: 2px solid transparent;
+}
+
+.nav-link:hover {
+    color: green;
+    border-bottom-color: blue;
+}
+.navbar:focus {
+
+}
+
+.nav-dbar {
+    /* display: block; */
     margin-left: auto;
     padding-right: 40px;
-    width: max-content;
+    /* width: max-content; */
     max-width: 100dvw;
     /* border: 2px solid yellow; */
 
@@ -149,4 +177,54 @@ img {
     align-items: center;
     justify-content: space-evenly;
     margin-top: 20px;
+}
+
+.certificate {
+
+    display: grid;
+    grid-template-columns: 70% 30%;
+ }
+
+.cert-image {
+    /* margin: auto; */
+    /* border: 5px solid greenyellow; */
+}
+.content {
+    font-size: 1.3rem;
+    color: white;
+    text-shadow: 1px 2px green;
+    margin-top: 20px;
+    padding: 10px;
+}
+.solo_learn {
+    display: flex;
+    overflow-x: auto;
+    margin: auto;
+}
+
+.solo {
+    min-width: 500px;
+    margin: 20px;
+    border: 6px solid black;
+    margin-left: 0;
+    background-color: rgb(255, 255, 255);
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+
+.solo-img {
+    border-top-left-radius: 20px;
+
+    border-bottom:  4px solid yellow;
+}
+
+.solo-name {
+    padding: 10px 5px;
+    font-size: 22px;
+    color: black;
+    width: max-content;
+    margin: auto;
+    border: 2px solid blue;
+    font-family: 'Playpen Sans', cursive;
 }
