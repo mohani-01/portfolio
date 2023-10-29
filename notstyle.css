@@ -160,7 +160,6 @@ img {
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
-    /* flex-direction: column; */
 }
 .svg {
     border: 2px solid green;
