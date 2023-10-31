@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    changeSection();
 //    const BEFORE = document.getElementById('before')
 //    const AFTER = document.getElementById('after')
 //    const LANG = document.getElementById('lang')
@@ -115,37 +116,70 @@ document.addEventListener('DOMContentLoaded', () => {
     // });
 
     document.querySelectorAll('section').forEach(section => {
-        console.log(section.id, section.getBoundingClientRect().top)
-        console.log(section.id, section.getBoundingClientRect().height + section.getBoundingClientRect().top)
-        console.log(window.scrollY)
-        console.log(window.innerHeight)
+        // console.log(section.id, section.getBoundingClientRect().top)
+        // console.log(section.id, section.getBoundingClientRect().height + section.getBoundingClientRect().top)
+        // console.log(window.scrollY)
+        // console.log(window.innerHeight)
     })
-    window.onscroll = () => {
-        console.log(window.innerHeight)
-        document.querySelectorAll('section').forEach(section => {
-            const scrollHeight = Math.floor(window.scrollY - 84)
-            const bottom = Math.floor(section.getBoundingClientRect().height + section.getBoundingClientRect().top + window.innerHeight) ;
-            if ( Math.floor(section.getBoundingClientRect().top + scrollHeight) < Math.floor(scrollHeight) && (Math.floor(bottom)  > Math.floor(scrollHeight) )) {
-                changeTop(section)
-            }
-            if (section.id === "Contact-Me") {
-                console.log("top", section.getBoundingClientRect().top + window.scrollY, window.scrollY)
 
-            }
-            // console.log("bounding element", section,    section.getBoundingClientRect().y)
-        //    console.log(section.getBoundingClientRect().top)
+    const navbar = document.getElementById('navbarNav');
+    navbar.querySelectorAll('a').forEach(ahref => {
+        ahref.addEventListener('click', () => {
+            navbar.querySelectorAll('a').forEach(event => {
+                event.style.borderBottomColor = 'transparent';
+            })
+            ahref.style.borderBottomColor = 'green';
+
         })
-    }
+    })
+    window.addEventListener('wheel', () => {
+        changeSection()
+       
+    })
 })
 
 
 
-function changeTop(currentSection) {
-    console.log("top", currentSection.getBoundingClientRect().y, window.scrollY)
-    console.log("bottom", currentSection.getBoundingClientRect().bottom + window.innerHeight, window.scrollY)
+function changeSection() {
+    const navbar = document.getElementById('navbarNav');
+
+    const section =  document.querySelector('#Projects');
+    const total = Math.floor(Math.abs(section.getBoundingClientRect().bottom) + Math.floor(Math.abs(section.getBoundingClientRect().top)));
+    const height = Math.floor(section.getBoundingClientRect().height);
+    console.log(total, height, total === height)
+//    console.log((Math.abs(section.getBoundingClientRect().bottom) + Math.floor(Math.abs(section.getBoundingClientRect().top))));
+        
+    // console.log((Math.abs(section.getBoundingClientRect().top) + Math.abs(section.getBoundingClientRect().bottom)),"Height", section.getBoundingClientRect().height, "Bottom>>",section.getBoundingClientRect().bottom, "Top>>>" ,(section.getBoundingClientRect().top), ">>", (section.getBoundingClientRect().height), window.scrollY);
+    // console.log('bottom', section.getBoundingClientRect().bottom)
+    // console.log(window.innerHeight)
+    document.querySelectorAll('section').forEach(section => {
+        const total = Math.floor(Math.abs(section.getBoundingClientRect().bottom) + (Math.abs(section.getBoundingClientRect().top)));
+        const height = Math.floor(section.getBoundingClientRect().height);
+        if (  total === height) {
+            // console.log(section, total, height)
+            // console.log(section)
+            changeTop(section, navbar)
+        }
+      
+        // console.log("bounding element", section,    section.getBoundingClientRect().y)
+    //    console.log(section.getBoundingClientRect().top)
+    })
+}
+
+function changeTop(currentSection, navbar) {
+    // console.log("top", currentSection.getBoundingClientRect().y, window.scrollY)
+    // console.log("bottom", currentSection.getBoundingClientRect().bottom + window.innerHeight, window.scrollY)
     document.querySelectorAll('section').forEach(section => {
         section.className = "";
     })
-    currentSection.className = "border";
+    const name = currentSection.dataset.name;
+    // console.log("navbrar",navbar)
+    const currentLi = navbar.querySelector(`.${name}`);
+    // console.log(currentLi)
+    navbar.querySelectorAll('a').forEach(ahref => {
+        ahref.style.borderBottomColor = 'transparent';
+    })
+    currentLi.style.borderBottomColor = 'green';
+    // currentSection.className = "border";
 }
 
