@@ -156,6 +156,7 @@ function changeSection() {
         const total = Math.floor(Math.abs(section.getBoundingClientRect().bottom) + (Math.abs(section.getBoundingClientRect().top)));
         const height = Math.floor(section.getBoundingClientRect().height);
         if (  total === height) {
+            console.log(section)
             // console.log(section, total, height)
             // console.log(section)
             changeTop(section, navbar)

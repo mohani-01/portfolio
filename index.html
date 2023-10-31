@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script> -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script> -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script> -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script> -->
     
     <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +18,7 @@
     <script src="index.js"  ></script>
 </head>
 <body id="About-Me">
-     <header class="contain">
+     <!-- <header class="contain">
         <nav class="navbar navbar-expand-md bg-secondary">
             <div class="container-fluid">
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,7 +47,7 @@
             </div>
           </nav>
     </header> 
-    
+     -->
         
     <section data-name="about-me">
         <div class="about-me">
@@ -164,9 +164,13 @@
                         <a href="https://github.com/mohani-01/mail">
                             <button>See Code</button>
                         </a>
+                        <form action="https://django-js-mail.onrender.com/login" method="post">
+                            <input type="hidden" name="email" value="nahom@gmail.com">
+                            <input type="hidden" name="password" value="superuser">
+                            <button><input type="submit" value="Visit website"> </button> 
+                        </form>
                         <a href="https://django-js-mail.onrender.com ">
             
-                            <button>View Website</button> 
                         </a>
                     </div>
                 </div>
@@ -312,10 +316,13 @@
     <section id="Education" data-name="education" class="education">
             <h2>Education</h2>
             <div class="certificate">
-            <a href="https://cs50.harvard.edu/certificates/913b19b6-56b0-47f0-ac62-b0b0f8e0ef90">
+            <a  href="https://cs50.harvard.edu/certificates/913b19b6-56b0-47f0-ac62-b0b0f8e0ef90">
 
                 <div class="topic">CS50’s Web Programming with Python and JavaScript</div>
-                <img class="cert-image" src="../images/CS50P.png" width="800"  alt="CS50P Certificate"><br>
+                <div class="cert-image">
+
+                    <img  src="../images/CS50P.png" width="800"  alt="CS50P Certificate"><br>
+                </div>
             </a>
             <div class="content">
                 &nbsp;&nbsp; Contents
@@ -338,7 +345,10 @@
             <div class="certificate">
             <a href="https://cs50.harvard.edu/certificates/913b19b6-56b0-47f0-ac62-b0b0f8e0ef90">
                 <div class="topic">CS50’s Introduction to Computer Science</div>
-                <img class="cert-image" src="../images/CS50P.png" width="800"  alt="CS50P Certificate"><br>
+                <div class="cert-image">
+
+                    <img  src="../images/CS50P.png" width="800"  alt="CS50P Certificate"><br>
+                </div>
             </a>
             <div class="content">
                 &nbsp;&nbsp; Contents
@@ -359,7 +369,10 @@
         <div class="certificate">
             <a  href="https://cs50.harvard.edu/certificates/913b19b6-56b0-47f0-ac62-b0b0f8e0ef90">
                 <div class="topic">CS50's Introduction to Programming with Python</div>
-                <img class="cert-image"  src="../images/CS50P.png" width="800"  alt="CS50P Certificate"><br>
+                <div class="cert-image">
+
+                    <img   src="../images/CS50P.png" width="800"  alt="CS50P Certificate"><br>
+                </div>
             </a>
             <div class="content">
                 &nbsp;&nbsp; Contents 
@@ -376,7 +389,7 @@
                 </ul>
             </div>
         </div>
-        <div class="solo_learn">
+        <div class="solo-learn">
             <div class="solo">
                 <a href="https://www.sololearn.com/certificates/CC-DYTJT7UY">
                     <img class="solo-img" src="images/sololearn-python.png" alt="sololearn Python Certificate">
