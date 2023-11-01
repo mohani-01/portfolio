@@ -72,8 +72,9 @@ section {
 
 
 #About-Me {
-    margin-top: 85px;
-    /* border-top: 4px solid gray; */
+    height: 85px;
+    background-color: green;
+    border-bottom: 4px solid gray;
 }
 
 @media (max-width: 1100px) {
