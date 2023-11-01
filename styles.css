@@ -62,7 +62,7 @@ li > a {
 
 section {
     position: relative;
-    min-height: 100dvh;
+    min-height: 100vh;
     background-color: #3a3a3a;
     /* border: 2px solid white; */
     padding: 150px 10%;
@@ -83,7 +83,7 @@ section {
     }
     
     .certificate {
-        grid-template-columns: 80% 20% ;
+        /* grid-template-columns: 80% 20% ; */
     }
 
     .content {
@@ -130,8 +130,6 @@ section {
     header {
         position: relative !important;
     }
-
-    
 }
 
 
@@ -141,6 +139,10 @@ section {
     .content ul {
         display: flex;
         flex-wrap: wrap;
+    }
+
+    .content li {
+        padding: 10px 30px 10px 10px !important;
     }
     .svg {
         margin: 0;
@@ -164,7 +166,7 @@ section {
 }
 
 header {
-    position: fixed;
+    position: fixed !important;
     /* position: sticky; */
     top: 0;
     left: 0;
@@ -185,10 +187,13 @@ header {
 
 
 
+
+
 .container-fluid{
     justify-content: flex-end !important;
 }
 .navbar-nav{
+    display: flex;
     margin-left: auto;
     /* border: 2px solid black; */
 }
@@ -303,11 +308,10 @@ img {
     
     display: grid;
     grid-template-rows: auto;
-    grid-template-columns: 70% 30%;
+    grid-template-columns: auto 300px;
 }
 
 .certificate {
-    /* height: min-content; */
 }
 .certificate > a {
     display: flex;
@@ -362,7 +366,6 @@ img {
     transform: none;
     border: 2px solid white;
     animation-duration: 1000ms;
-    /* animation-delay: 20ms; */
     animation-iteration-count:infinite ;
     animation-play-state: paused;
     animation-timing-function: forwards;
@@ -375,7 +378,6 @@ img {
 .content {
     font-size: 1.3rem;
     color: white;
-    /* text-shadow: 1px 2px green; */
     margin-top: calc(1.5rem +  42px );
     padding: 20px;
     border-right: 2px solid brown;
@@ -413,8 +415,6 @@ img {
     
 }
 
-.solo-learn::-webkit-scrollbar {
-}
 
 .solo {
     min-width: 420px;
@@ -485,9 +485,11 @@ img {
 
 .description:hover .see{
     opacity: 1;
+    pointer-events: all ;
 }
 
 .see {
+
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -497,10 +499,10 @@ img {
     bottom: 0;
     left: 0;
     right: 0;
-    /* border: 2px solid rgb(255, 255, 255); */
     text-align: center;
     transition: all 700ms ease;
     z-index: 400;
+    pointer-events: none;
 }
 
 .see a {
