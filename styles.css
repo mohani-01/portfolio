@@ -509,6 +509,8 @@ img {
     color: black    ;
 }
 
+
+
 .description:hover .see{
     opacity: 1;
     pointer-events: all ;
@@ -554,4 +556,36 @@ img {
 
 .description:hover .note{
     opacity: .5;
+}
+
+
+
+.title {
+    /* border: 2px solid gainsboro; */
+}
+
+.title > h3 {
+    /* border: 2px solid gainsboro; */
+    margin: 10px 0;
+}
+
+.developed {
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: space-around;
+    opacity: 0;
+    transition: opacity 2000ms ease;
+}
+
+.developed > div {
+    font-size: .8rem;
+    padding: 5px 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(1, 43, 1);
+    color: white;
+    border-radius: 20px;
+}
+
+.description:hover .developed  {
+    opacity: 1;
 }
