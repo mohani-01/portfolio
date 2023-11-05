@@ -1,10 +1,52 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Playpen+Sans&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Playpen+Sans&display=swap');
+:root {
+    /* 22333B */
+    --bg-secondary : #030520;
+    --bg-main:#000219;
+    /* --bg-main:#000219; */
+    --color-blue : #235789;
+    --color-sky-blue: #C3C9E9;
+    --color-red: #35524A;
+    --color-redd: #ED1C24;
 
+}
+
+#section-about-me {
+    background: linear-gradient(200deg, #000219 , #ffffff) ;
+}
+
+#Technologies {
+    background: linear-gradient(200deg,#ffffff , #000219) ;
+}
+
+#Projects {
+    background: linear-gradient(180deg,#2995D2 ,#121c8e, #000219 80%) ;
+    /* padding-top: 0px !important; */
+}
+
+#Education {
+    
+    background-color: #000219;
+}
+    
+.spacer-edu {
+    aspect-ratio:900/675;
+    width: 100dvw;
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.education-harvard {
+    background-image: url('images/svg/circle-background.svg');
+}
 body {
     position: relative;
     margin: 0;
     overflow-x: hidden;
-    background-color: aqua;
+    background-color: var(--color-red);
 }
 
 body > * {
@@ -17,7 +59,7 @@ li {
 }
 
 a {
-    color: green;
+    color: var(--bg-secondary);
     text-decoration: none;
 }
 
@@ -57,13 +99,13 @@ li > a {
 }
 
 .svg:hover .name {
-    color: rgb(255, 255, 255);
+    color: var(--bg-secondary);
 }
 
 section {
     position: relative;
     min-height: 100vh;
-    background-color: #3a3a3a;
+    /* background-color: var(--color-blue); */
     /* border: 2px solid white; */
     padding: 150px 10%;
     margin:0;
@@ -104,13 +146,21 @@ section {
         display: block !important;
     }
 
-    .content {
-        margin-top: 0px !important;
-    }
-    .content ul {
-        font-size: 14px;
+    .cert-image {
+        margin-right: 0px !important;
     }
 
+    .content {
+        max-width: 100% !important;
+        margin-top: 20px !important;
+    }
+    .content ul {
+        font-size: 16px;
+    }
+
+    .content li {
+        padding: 10px;
+    }
 
 
 
@@ -124,18 +174,25 @@ section {
         font-size: 1rem;
     }
 
+    .solo-learn {
+        margin: 10px !important;
+    }
    .solo-name {
-    font-size: 16px !important;
+    font-size: 15px !important;
    }
 
     header {
         position: relative !important;
+        
     }
 }
 
 
 @media only screen and (max-width: 600px) {
    
+    .custom svg {
+        height: 142px !important;
+    }
 
     .content ul {
         display: flex;
@@ -154,13 +211,14 @@ section {
         margin: 0;
     }
 
-
     .solo {
         min-width: 300px !important;
     }
     .name {
         padding: 5px;
     }
+
+    
 
    
 }
@@ -181,7 +239,7 @@ header {
 
 }
 .navbar {
-    background-color: #00000e !important;
+    background-color: var(--bg-main) !important;
 
 }
 
@@ -214,7 +272,7 @@ header {
 
 .nav-link:hover {
     color: green;
-    border-bottom-color: blue;
+    border-bottom-color: green;
 }
 
 .nav-dbar {
@@ -249,14 +307,10 @@ header {
     height: 242px;
 }
 
-@media only screen and (max-width: 600px) {
-    .custom svg {
-        height: 142px;
-    }
-}
+
 
 .custom .shape-fill {
-    fill: #00000e ;
+    fill: var(--bg-main) ;
 }
 
 .custom-bottom {
@@ -267,7 +321,7 @@ header {
     overflow: hidden;
     line-height: 0;
     transform: rotate(180deg);
-color: #00000e ;
+    color: #00000e ;
 }
 
 .custom-divider {
@@ -288,7 +342,7 @@ color: #00000e ;
 }
 
 .custom-divider .shape-fill {
-    fill: #00000e;
+    fill: var(--bg-main);
 }
 
 img {
@@ -336,12 +390,9 @@ img {
 @media only screen and (max-width: 1000px) {
     .cert-image {
          display: flex;
-        /* flex-grow: 1.1; */
-        /* flex-direction: column; */
         align-items: center; 
-        /* border: 2px solid black; */
-        /* margin: auto; */
-        /* border: 5px solid greenyellow; */
+        margin-right: 20px;
+       
     }
 }
 
@@ -369,6 +420,7 @@ img {
 
 .cert-image img {
     max-width: 800px;
+    width: 99%;
     transform: none;
     border: 2px solid white;
     animation-duration: 1000ms;
@@ -385,6 +437,8 @@ img {
 .content {
     user-select: none;
     min-width: 250px;
+    flex-grow: 1;
+    /* max-width: 400px; */
     font-size: 1.1rem;
     color: white;
     padding: 20px;
@@ -398,14 +452,14 @@ img {
 }
 
 .content ul {
-    border: 2px solid green;
+    /* border: 2px solid green; */
     /* padding-inline-start: 40px; */
 }
 .content li {
     padding: 10px 0;
     transition: all 300ms ease-in;
     cursor: pointer;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
 }
 
 .content li:hover {
@@ -488,7 +542,7 @@ img {
     background-color: rgba(255, 255, 255, 0.346);
     margin: 40px 0;
     display: grid;
-    width: 700px;
+    width: 750px;
     grid-template-columns: 165px auto;
     padding: 20px 0;
     border-radius: 20px;
@@ -515,7 +569,7 @@ img {
     cursor: default;
     position: relative;
     margin: 0 20px;
-    padding-bottom: 20px;
+    padding: 0 10px  20px 10px;
     color: black;
     font-size: 1.2rem;
     text-align: justify;
@@ -550,28 +604,38 @@ img {
 }
 
 .see button:hover {
-    box-shadow: 0 0 10px 2px rgb(37, 34, 34);
+    border-color: #2179ac;
+
 }
 
+.note {
+    opacity: 1;
 
+    font-family: 'Open Sans', sans-serif;
+    text-align: justify;
+    transition: opacity 500ms ease-in;
+}
 
 
 
 .see a {
     border-radius: 10px;
     overflow: hidden;
-    border: 1px dashed white;
+    /* border: 1px dashed white; */
     height: max-content;
 
 }
 .see  button {
+    border-radius: 10px;
+
     cursor: pointer;
     padding: 10px 20px;
     font-family:  sans-serif;
     color: rgb(255, 255, 255);
-    border: none;
-    background-color: #00000e;
+    border: 2px solid transparent;
+    background-color: #2995D2;
     font-size: 1.2rem;
+    transition: border 500ms linear;
     /* border-radius: 20px; */
 }
 
@@ -586,6 +650,7 @@ img {
     /* border: 2px solid gainsboro; */
     text-align: center;
     /* margin: 10px; */
+    
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
@@ -593,7 +658,7 @@ img {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    border-right: .25rem solid rgb(77, 255, 0);
+    border-right: .25rem solid #4dff00;
     /* position: relative; */
     text-align: end;
     padding: 0 20px;
@@ -602,6 +667,7 @@ img {
 .image-container .image {
     width: 95%;
     margin-bottom: 10px;
+    border-radius: 5px;
 }
 
 .developed {
@@ -610,7 +676,6 @@ img {
     align-items: flex-end;
     justify-content: space-around;
     opacity: .5;
-
     padding: 10px 0;
     transition: opacity 1000ms ease;
 }
@@ -621,14 +686,15 @@ img {
     font-size: .7rem;
     padding: 4px 10px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: rgb(39, 117, 6);
+    background-color: #32abf1;
     color: white;
-    border: 1px solid transparent;
+    border: 1.5px solid transparent;
     border-radius: 20px;
 }
 
 .developed > div:hover {
-    border-color: #00000e;
+    
+    border-color: #4dff00;
 } 
 
 
@@ -689,11 +755,6 @@ img {
         margin: 0 10px;
     }
 
-    .image-container .image {
-        width: 95%;
-        border-radius: 5px;
-    }
-
     .developed > div {
         padding: 0 10px ;
     }
@@ -704,7 +765,6 @@ img {
 
     .note {
         font-size: 14px;
-        text-align: justify;
     }
 
     .see button {
@@ -713,7 +773,7 @@ img {
     }
 
     .see a {
-        margin: 5px 0;
+        margin: 5px ;
     }
     
     .image-container {
@@ -737,10 +797,12 @@ img {
 
 
 form {
+    position: relative;
+    z-index: 200;
     border: 2px solid yellow;
     margin: auto;
     width: max-content;
-}
+}f
 
 #messageInput {
     min-height: 250px;
@@ -752,25 +814,126 @@ form {
     min-width: 300px;
     width: 70vw;
     padding: 5px 10px;
-    margin: 10px 0;
+    margin: 5px 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     outline: none;
-    border: 2px solid beige;
-    box-shadow: 5px 5px 20px -10px green;
-    /* border-color: transparent; */
-    background-color: rgb(192, 192, 192) ;
-    color: blue;
+    border: 2px solid transparent;
+    border-radius: 7px;
+    background-color: rgb(214, 226, 215);
+    resize: none;
 }
 
 .contact-form:hover {
     border-color: 2px solid green;
 }
 
-.contact-form:focus {
-    border-color: transparent;
-    outline: black solid 2px;
-}
+
 
 #send {
-    margin-left: calc(100% - 50px);
+    font-family:  sans-serif;
+    padding: 7px 20px;
+    margin-left: calc(100% - 80px);
+}
+
+
+/* #Technologies {
+    background-color: #0a4fb8;
+    margin: 0;
+    color: #; */
+
+
+
+.spacer {
+    /* color: ; */
+
+    aspect-ratio:1260/200;
+    width: 100dvw;
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+   
+}
+
+.layer  {
+    background-image: url('images/svg/stacked-steps.svg');
+    /* border: 1px solid #0a4fb8; */
+    
+}
+
+.layer1 {
+    background-image: url('images/svg/circle-scatter-haikei.svg');
+}
+
+#Projects {
+    
+    /* background-color: #3489d9  ; */
+}
+
+.new-spacer {
+    aspect-ratio: 960/250;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.custom-shape-divider-bottom-1699120156 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    z-index: 0;
+}
+
+.custom-shape-divider-bottom-1699120156 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 288px;
+    transform: rotateY(180deg);
+}
+
+@media only screen and (max-width: 600px ) {
+    .custom-shape-divider-bottom-1699120156 svg {
+        height: 144px;
+    }
+}
+
+.custom-shape-divider-bottom-1699120156 .shape-fill {
+    fill: #373F47;
+}
+
+
+.error {
+    border-color:  red;
+}
+
+.success {
+    border-color: green;
+
+}
+
+
+
+
+.error-div {
+    margin: 10px 0;
+    padding: 10px 20px;
+    background-color: rgb(179, 0, 0);
+    color: white;
+    border-radius: 5px;
+}
+
+
+.success-div {
+    margin: 10px 0;
+    padding: 10px 20px;
+    background-color: rgb(12, 179, 0);
+    color: white;
+    border-radius: 5px;
+
 }
