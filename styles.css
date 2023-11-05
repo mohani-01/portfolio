@@ -893,7 +893,7 @@ form {
     position: relative;
     display: block;
     width: calc(100% + 1.3px);
-    height: 288px;
+    height: 108px;
     transform: rotateY(180deg);
 }
 

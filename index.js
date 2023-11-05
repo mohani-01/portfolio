@@ -55,8 +55,6 @@ function changeSection() {
     // if the event not caused by hyperlink
     if (scroll ) {
         const navbar = document.getElementById('navbarNav');
-
-
         document.querySelectorAll('section').forEach(section => {
             const total = Math.floor(Math.abs(section.getBoundingClientRect().bottom) + (Math.abs(section.getBoundingClientRect().top)));
             const height = Math.floor(section.getBoundingClientRect().height);
@@ -70,7 +68,6 @@ function changeSection() {
     }
    
 }
-
 
 
 const toggler = document.querySelector('.navbar-toggler')
@@ -92,9 +89,7 @@ document.querySelector('.navbar-nav').querySelectorAll('a').forEach(a => {
 document.getElementById('messageInput').addEventListener("input", (event) => {
     const textarea = event.target;
     textarea.style.height = 'auto';
-    textarea.style.height = textarea.scrollHeight + 24 + 'px';   
-    
-    
+    textarea.style.height = textarea.scrollHeight + 24 + 'px';     
 })
 
 
