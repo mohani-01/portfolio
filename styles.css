@@ -897,8 +897,31 @@ form {
     transform: rotateY(180deg);
 }
 
+.custom-shape-divider-top-1699214157 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-top-1699214157 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 155px;
+    transform: rotateY(180deg);
+}
+
+.custom-shape-divider-top-1699214157 .shape-fill {
+    fill: #6363AC;
+}
+
+
 @media only screen and (max-width: 600px ) {
-    .custom-shape-divider-bottom-1699120156 svg {
+    .custom-shape {
         height: 144px;
     }
 }
