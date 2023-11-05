@@ -165,7 +165,7 @@ document.getElementById('send').addEventListener('click', (event) => {
         body: JSON.stringify({
             name: name.value,
             email: email.value,
-            message: email.value
+            message: message.value
         })
     })
     .then(response => response.json())
