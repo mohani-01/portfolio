@@ -278,3 +278,4 @@ function changeClassName(inputs, values) {
         input.className = values;
     })
 }
+
