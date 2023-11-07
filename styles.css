@@ -1,5 +1,10 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Playpen+Sans&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Playpen+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&family=Merienda:wght@900&family=Open+Sans:wght@300&family=Playpen+Sans&family=Ultra&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Carter+One&family=Merienda:wght@900&family=Open+Sans:wght@300&family=Playpen+Sans&family=Roboto&family=Ultra&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Carter+One&family=Merienda:wght@900&family=Open+Sans:wght@300&family=Playpen+Sans&family=Roboto&family=Ultra&display=swap');
+ 
+  
+  @import url('https://fonts.googleapis.com/css2?family=Carter+One&family=Merienda:wght@900&family=Open+Sans:wght@300&family=Playfair+Display&family=Playpen+Sans&family=Roboto&family=Ultra&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Playpen+Sans&family=Satisfy&display=swap'); */
 :root {
     /* 22333B */
     --bg-secondary : #030520;
@@ -21,8 +26,8 @@
 }
 
 #Projects {
-    background: linear-gradient(180deg,#2995D2 ,#121c8e, #000219 80%) ;
-    /* padding-top: 0px !important; */
+    background: linear-gradient(180deg, #2995D2 20%, #2995D2,#121c8e, #000219 80%) ;
+    /* padding-top: 400px !important; */
 }
 
 #Education {
@@ -531,9 +536,12 @@ img {
 
 
 .project-container {
+    position: relative;
+    z-index: 200;
     /* display: none; */
     width: max-content;
     margin: auto;
+    padding: 180px 0;
 }
 
 
@@ -845,10 +853,17 @@ form {
 
 .spacer {
     /* color: ; */
-
-    aspect-ratio:1260/200;
+    aspect-ratio: 900/300;
     width: 100dvw;
-    
+    top: 0;
+    position: absolute;
+    right: 0;
+    left: 0;
+    /* z-index: 2000; */
+    bottom: auto;
+    height: 320px;
+    background-color: white;
+    /* border: 2px solid green; */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -856,7 +871,7 @@ form {
 }
 
 .layer  {
-    background-image: url('images/svg/stacked-steps.svg');
+    background-image: url('images/svg/steps.svg');
     /* border: 1px solid #0a4fb8; */
     
 }
@@ -865,10 +880,6 @@ form {
     background-image: url('images/svg/circle-scatter-haikei.svg');
 }
 
-#Projects {
-    
-    /* background-color: #3489d9  ; */
-}
 
 .new-spacer {
     aspect-ratio: 960/250;
@@ -960,3 +971,193 @@ form {
     border-radius: 5px;
 
 }
+
+
+
+
+.contact-container {
+    border: 2px solid white;
+    position: relative;
+    z-index: 200;
+    max-width: 1100px;
+    margin: auto;
+    user-select: none;
+}
+
+
+.main-container {
+    position: relative;
+    border: 2px solid brown;
+    height: max-content;
+    color: rgb(54, 148, 22);
+
+}
+
+.hello-world {
+    text-align: center;
+    font-size: 80px;
+    font-weight: 800;
+    border: 2px solid yellow;
+   
+}
+.hello-text {
+    background: -webkit-linear-gradient(0deg,yellow, orange);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.detail-container {
+    position: relative;
+    text-align: right;
+    /* right: 0px; */
+    font-size: 65px;
+    font-family: "Roboto", sans-serif;
+    height: max-content;
+    
+    border: 2px solid green;
+}
+
+
+.my-name {
+    position: relative;
+    border: 2px solid rgb(52, 39, 39);
+}
+
+
+
+.my-name .nahom {
+    background: -webkit-linear-gradient(45deg,#ff0000, #110101);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: "Ultra", sans-serif;
+
+}
+.nahom  {
+    /* position: absolute; */
+    /* right: 0; */
+    font-size: 80px !important;
+    /* border: 2px dashed green; */
+}
+.full-stack .nahom {
+    font-style: normal;
+
+    font-family: "Carter One", sans-serif;
+    background: -webkit-linear-gradient(0deg,#ff0000, #110101);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+}
+
+.full-stack {
+    box-sizing: border-box;
+    position: absolute;
+    text-align: right;
+    left: 0px;
+    top: 120px;
+    padding: 10px;
+
+    border: 2px solid indianred;
+}
+
+.specific {
+text-shadow: 1px 1px black;
+
+    margin-top: 150px;
+    padding: 20px;
+    font-size: 30px;
+    font-family: "Playfair Display", sans-serif;
+    text-align: justify;
+}
+.hand {
+    animation-name: wave;  /* Refers to the name of your @keyframes element below */
+    animation-duration: 2.5s;        /* Change to speed up or slow down */
+    animation-iteration-count: infinite;  /* Never stop waving :) */
+    transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
+    display: inline-block;
+  }
+  
+  @keyframes wave {
+      0% { transform: rotate( 0.0deg) }
+     10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
+     20% { transform: rotate(-8.0deg) }
+     30% { transform: rotate(14.0deg) }
+     40% { transform: rotate(-4.0deg) }
+     50% { transform: rotate(10.0deg) }
+     60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+    100% { transform: rotate( 0.0deg) }
+  }
+  
+  
+ 
+  
+
+@media only screen and (max-width:980px) {
+
+    .detail-container {
+        font-size: 45px !important;
+    }
+    
+    .nahom {
+        font-size: 60px !important;
+    }
+}
+
+    @media only screen and (max-width:740px) {
+        .hello-world {
+            font-size: 45px;
+            text-align: center;
+        }
+
+        .my-name {
+            display: inline-block;
+        }
+        .name {
+            /* display: inline-block; */
+        }
+        .detail-container, .full-stack {
+            font-size: 35px !important;
+            text-align: start;
+        }
+        
+        .full-stack {
+            display: flex;
+            justify-content: end;
+            flex-wrap: wrap;
+            position: relative;
+            top: 0px;
+            text-align: end;
+        }
+        
+        .stack {
+            display: inline-flex;
+        }
+
+        .nahom-container {
+            display: inline-flex;
+        }
+
+        .nahom {
+            display: inline;
+            font-size: 40px !important;
+        margin-right: 10px;
+
+        }
+    }
+    
+@media only screen and (max-width:380px) {
+
+    .hello-world {
+        font-size: 35px;
+    }
+    .my-name .nahom {
+        font-size: 30px !important;
+    }
+
+    .full-stack .nahom {
+        font-size: 35px !important;
+    }
+    .detail-container, .full-stack {
+
+        font-size: 25px !important;
+    }
+}
+

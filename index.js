@@ -78,7 +78,11 @@ const toggler = document.querySelector('.navbar-toggler')
 document.querySelector('.navbar-nav').querySelectorAll('a').forEach(a => {
     // For each nav-links clicked if the nav bar is collapsed make the page not covered by the navbar
     a.addEventListener('click', () => {
-        if (!window.getComputedStyle(toggler).display === 'none') {
+        console.log(toggler)
+        console.log(window.getComputedStyle(toggler).display)
+
+        if (!(window.getComputedStyle(toggler).display === 'none')) {
+            console.log(toggler)
             toggler.click()
         } 
     })
