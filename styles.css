@@ -18,11 +18,22 @@
 }
 
 #section-about-me {
-    background: linear-gradient(200deg, #000219 , #ffffff) ;
+    background: linear-gradient(200deg, #000219 , #ffffff 60%);
+    padding-top: 100px;
 }
 
 #Technologies {
-    background: linear-gradient(200deg,#ffffff , #000219) ;
+    background: linear-gradient(200deg,#ffffff , #000219 );
+}
+.tech-container {
+    position: relative;
+    z-index: 200;
+    
+}
+
+.tech-container .topic {
+    color: brown;
+    text-shadow: 2px 2px  white;
 }
 
 #Projects {
@@ -77,11 +88,14 @@ li > a {
 }
 
 .name {
-    color: transparent;
-    font-size: 1.2rem;
+    opacity: 0;
+    font-size: 1.5rem;
     transition: all 500ms ease-in;
     padding: 10px 5px;
     cursor: default;
+    color: brown;
+    text-shadow: .5px .5px silver;
+    font-weight: 550;
 }
 
 .svg > svg {
@@ -104,14 +118,13 @@ li > a {
 }
 
 .svg:hover .name {
-    color: brown;
+    opacity: 1;
 }
 
 section {
     position: relative;
-    min-height: 100vh;
-    /* background-color: var(--color-blue); */
-    /* border: 2px solid white; */
+    min-height: 100dvh;
+    background-color: var(--color-blue);
     padding: 150px 10%;
     margin:0;
     box-sizing: border-box;
@@ -120,7 +133,7 @@ section {
 
 #About-Me {
     height: 85px;
-    background-color: green;
+    background-color: var(--bg-main);
     border-bottom: 4px solid gray;
 }
 
@@ -180,7 +193,7 @@ section {
     }
 
     .solo-learn {
-        margin: 10px !important;
+        margin: 0px 10px !important;
     }
    .solo-name {
     font-size: 15px !important;
@@ -243,11 +256,24 @@ header {
     /* border: 2px solid yellow; */
 
 }
+
+.navbar-toggler {
+    border-color: #D4AF37;
+    background: radial-gradient(white, #D4AF37, var(--bg-main) );
+
+}
+
+
+
 .navbar {
     background-color: var(--bg-main) !important;
 
 }
 
+.navbar-brand > img {
+    width: 40px;
+    height:auto;
+}
 
 
 
@@ -275,6 +301,9 @@ header {
 }
 
 .nav-link:hover {
+    color: #D4AF37;
+}
+.nav-link:focus {
     color: #D4AF37;
 }
 .navbar-hover {
@@ -321,6 +350,7 @@ header {
     fill: var(--bg-main) ;
 }
 
+
 .custom-bottom {
     position: absolute;
     bottom: 0;
@@ -339,7 +369,6 @@ header {
     width: 100%;
     overflow: hidden;
     line-height: 0;
-    /* border: 2px s    olid white; */
 }
 
 .custom-divider svg {
@@ -352,6 +381,27 @@ header {
 .custom-divider .shape-fill {
     fill: var(--bg-main);
 }
+.custom-shape-divider-bottom-1699375798 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1699375798 svg {
+    position: relative;
+    display: block;
+    width: calc(107% + 1.3px);
+    height: 220px;
+}
+
+.custom-shape-divider-bottom-1699375798 .shape-fill {
+    fill: #000219;
+}
+
 
 img {
     width: 100%;
@@ -493,8 +543,13 @@ img {
     margin-left: 0;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+    transition: box-shadow 500ms linear;
 
    }
+
+.solo:hover {
+    box-shadow: 2px 2px 5px #D4AF37;
+}
 
 .image-verify {
     position: relative;
@@ -807,30 +862,30 @@ img {
 }
 
 
-form {
+.contact-input {
     position: relative;
     z-index: 200;
-    border: 2px solid yellow;
     margin: auto;
     width: max-content;
-}f
+}
 
 #messageInput {
-    min-height: 250px;
+    min-height: 300px;
+    max-height: 600px;
 }
 
 
 .contact-form {
-    max-width: 700px;
+    max-width: 800px;
     min-width: 300px;
     width: 70vw;
-    padding: 5px 10px;
+    padding: 7px 10px;
     margin: 5px 0;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: "Roboto", sans-serif;
     outline: none;
     border: 2px solid transparent;
-    border-radius: 7px;
-    background-color: rgb(214, 226, 215);
+    border-radius: 5px;
+    background-color:#daeeff ;
     resize: none;
 }
 
@@ -844,8 +899,15 @@ form {
     font-family:  sans-serif;
     padding: 7px 20px;
     margin-left: calc(100% - 80px);
+    background-color: #D4AF37;
+    font-weight: 700;
+    border-radius: 7px;
+    border: 1px solid green;
 }
 
+#send:hover {
+    background-color: goldrod;
+}
 
 /* #Technologies {
     background-color: #0a4fb8;
@@ -911,6 +973,18 @@ form {
     transform: rotateY(180deg);
 }
 
+
+
+@media only screen and (max-width: 600px ) {
+    .custom-shape {
+        height: 144px;
+    }
+}
+
+.custom-shape-divider-bottom-1699120156 .shape-fill {
+    fill: var(--bg-main);
+}
+
 .custom-shape-divider-top-1699214157 {
     position: absolute;
     top: 0;
@@ -930,27 +1004,15 @@ form {
 }
 
 .custom-shape-divider-top-1699214157 .shape-fill {
-    fill: #6363AC;
+    fill: var(--bg-main);
 }
-
-
-@media only screen and (max-width: 600px ) {
-    .custom-shape {
-        height: 144px;
-    }
-}
-
-.custom-shape-divider-bottom-1699120156 .shape-fill {
-    fill: #373F47;
-}
-
 
 .error {
     border-color:  red;
 }
 
 .success {
-    border-color: green;
+    border-color: #D4AF37;
 
 }
 
@@ -962,7 +1024,7 @@ form {
     padding: 10px 20px;
     background-color: rgb(179, 0, 0);
     color: white;
-    border-radius: 5px;
+    -radius: 5px;
 }
 
 
@@ -979,7 +1041,7 @@ form {
 
 
 .contact-container {
-    border: 2px solid white;
+    /* border: 2px solid white; */
     position: relative;
     z-index: 200;
     max-width: 1100px;
@@ -990,9 +1052,8 @@ form {
 
 .main-container {
     position: relative;
-    border: 2px solid brown;
+    /* border: 2px solid brown; */
     height: max-content;
-    color: rgb(54, 148, 22);
 
 }
 
@@ -1000,57 +1061,56 @@ form {
     text-align: center;
     font-size: 80px;
     font-weight: 800;
-    border: 2px solid yellow;
+    /* border: 2px solid yellow; */
+    /* opacity: 0; */
+    /* transition: opacity  3000ms ease-in; */
    
 }
-.hello-text {
-    background: -webkit-linear-gradient(0deg, orange, #fae18f, orange);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+
 .detail-container {
     position: relative;
     text-align: right;
     /* right: 0px; */
-    font-size: 65px;
+    font-size: 55px;
     font-family: "Roboto", sans-serif;
     height: max-content;
-    
-    border: 2px solid green;
+    opacity: 0;
+    transition: opacity 3000ms ease-in;
 }
 
 
 .my-name {
     position: relative;
-    border: 2px solid rgb(52, 39, 39);
+    /* border: 2px solid rgb(52, 39, 39); */
+    font-family: "Ultra", sans-serif;
+    color: black;
+
 }
 
 
 
 .my-name .nahom {
-    background: -webkit-linear-gradient(45deg,#ff0000, #110101);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-family: "Ultra", sans-serif;
+    text-shadow: 2px 4px skyblue;
 
 }
 .nahom  {
+    font-size: 65px !important;
     /* position: absolute; */
     /* right: 0; */
-    font-size: 80px !important;
     /* border: 2px dashed green; */
 }
 .full-stack .nahom {
     font-style: normal;
-
-    font-family: "Carter One", sans-serif;
-    background: -webkit-linear-gradient(0deg,#ff0000, #110101);
+    text-shadow: 4px 4px #00000e;
+    background: -webkit-linear-gradient(-90deg,#ff0000, silver, white);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
 
 }
 
 .full-stack {
+    font-family: "Carter One", sans-serif;
+    color: black;
     box-sizing: border-box;
     position: absolute;
     text-align: right;
@@ -1058,7 +1118,7 @@ form {
     top: 120px;
     padding: 10px;
 
-    border: 2px solid indianred;
+    /* border: 2px solid indianred; */
 }
 
 .specific {
@@ -1067,13 +1127,15 @@ form {
     margin-top: 150px;
     padding: 20px;
     font-size: 25px;
-    line-height: 40px;
-    font-family: "Edu TAS Beginner", sans-serif;
+    /* line-height: 40px; */
+    font-family: "Roboto", sans-serif;
+    color: black;
     text-align: justify;
-    color: #00000e;
+    text-shadow: 1px .4px whitesmoke;
+    opacity: 0;
+    transition: opacity 500ms linear;
 }
 .hand {
-    animation-name: wave;  /* Refers to the name of your @keyframes element below */
     animation-duration: 2.5s;        /* Change to speed up or slow down */
     animation-iteration-count: infinite;  /* Never stop waving :) */
     transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
@@ -1103,7 +1165,7 @@ form {
     }
     
     .nahom {
-        font-size: 60px !important;
+        font-size: 55px !important;
     }
 }
 
@@ -1114,6 +1176,7 @@ form {
         }
 
         .specific {
+            padding: 10px 20px;
             margin-top: 0px;
             font-size: 20px;
         }
@@ -1135,7 +1198,7 @@ form {
             position: relative;
             top: 0px;
             text-align: end;
-            margin: 20px 0;
+            margin: 15px 0;
         }
         
         .stack {
@@ -1172,3 +1235,43 @@ form {
     }
 }
 
+
+
+.display {
+    margin: 0px ;
+    /* opacity: 0;     */
+    color: #D4AF37;
+    transition: opacity 700ms ease-in;
+    display: none;
+    
+        background: -webkit-linear-gradient(-90deg, rgb(255, 220, 20), rgb(210, 137, 0));
+       -webkit-background-clip: text;
+       -webkit-text-fill-color: transparent;
+
+}
+
+.display-container {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    /* height: 150px; */
+}
+
+.space {
+    margin-right: 10px;
+}
+
+
+
+
+#Contact-Me {
+    background: linear-gradient(rgb(246, 254, 255), var(--color-blue)70%, var(--bg-main) 96%);
+}
+
+#Contact-Me  h2 {
+    position: relative;
+    z-index: 200;
+    color: #D4AF37;
+
+    margin-bottom: 20px;
+}

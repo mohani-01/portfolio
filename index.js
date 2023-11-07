@@ -4,6 +4,34 @@ let scroll = true;
 // check if submission is completed
 let submitted = false;
 
+    
+const helloWorld = [...document.querySelector('.display-container').querySelectorAll('.display')]
+const N = helloWorld.length;
+for (let i = 0; i < N; i++) {
+    setTimeout(function timer() {
+      helloWorld[i].style.display = 'block';
+
+    }, i * 250);
+  }
+
+
+
+    
+        
+
+
+
+console.log(document.querySelector('.hello-world'),document.querySelector('.hello-world').opacity)
+// document.querySelector('.hello-world').style.opacity  = '1';
+setTimeout(() => {
+    document.querySelector('.hand').style.animationName ='wave';
+    document.querySelector('.detail-container').style.opacity = '1';
+}, 2400)
+
+
+setTimeout(() => {
+    document.querySelector('.specific').style.opacity = '1';
+}, 5000)
 changeSection();
 
 // get div container for View Code and View Webiste
