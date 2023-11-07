@@ -220,6 +220,7 @@ function validate(email) {
 
 
 function checkEmail(email) {
+    
 
     email.addEventListener('input', () => {
             if (!submitted) {
@@ -236,9 +237,9 @@ function checkEmail(email) {
 
 function changeNavbar(container, newlink) {
     container.querySelectorAll('a').forEach(link => {
-        link.style.borderBottomColor = 'transparent';
+        link.classList.remove('navbar-hover')
     })
-    newlink.style.borderBottomColor = 'green';
+    newlink.classList.add('navbar-hover');
 }
 
 

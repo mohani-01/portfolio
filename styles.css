@@ -2,7 +2,7 @@
   @import url('https://fonts.googleapis.com/css2?family=Carter+One&family=Merienda:wght@900&family=Open+Sans:wght@300&family=Playpen+Sans&family=Roboto&family=Ultra&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Carter+One&family=Merienda:wght@900&family=Open+Sans:wght@300&family=Playpen+Sans&family=Roboto&family=Ultra&display=swap');
  
-  
+  @import url('https://fonts.googleapis.com/css2?family=Carter+One&family=Edu+TAS+Beginner:wght@500&family=Merienda:wght@900&family=Open+Sans:wght@300&family=Playfair+Display&family=Playpen+Sans&family=Roboto&family=Ultra&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Carter+One&family=Merienda:wght@900&family=Open+Sans:wght@300&family=Playfair+Display&family=Playpen+Sans&family=Roboto&family=Ultra&display=swap');
 /* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Playpen+Sans&family=Satisfy&display=swap'); */
 :root {
@@ -104,7 +104,7 @@ li > a {
 }
 
 .svg:hover .name {
-    color: var(--bg-secondary);
+    color: brown;
 }
 
 section {
@@ -268,16 +268,19 @@ header {
 
 .nav-link {
     padding: 10px 20px;
-    /* border: 2px solid red; */
     color: white;
     font-size: 18px;
     border: 2px solid transparent;
-    transition: border-bottom-color 700ms ease-out;
+    transition: border-bottom-color, text-shadow 700ms ease-out;
 }
 
 .nav-link:hover {
-    color: green;
-    border-bottom-color: green;
+    color: #D4AF37;
+}
+.navbar-hover {
+    color: #D4AF37;
+    border-bottom-color: #D4AF37;
+    text-shadow: 2px 2px green;
 }
 
 .nav-dbar {
@@ -385,10 +388,10 @@ img {
 
 .topic {
     /* justify-self: flex-start; */
-    font-size: 1.5rem;
-    color: #cbcbdd;
+    color: #D4AF37;
     font-weight: 500;
     padding: 10px 0;
+
     /* border-left: 2px solid black; */
 }
 
@@ -1001,7 +1004,7 @@ form {
    
 }
 .hello-text {
-    background: -webkit-linear-gradient(0deg,yellow, orange);
+    background: -webkit-linear-gradient(0deg, orange, #fae18f, orange);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -1059,13 +1062,15 @@ form {
 }
 
 .specific {
-text-shadow: 1px 1px black;
+/* text-shadow: .5px .5px #D4AF37; */
 
     margin-top: 150px;
     padding: 20px;
-    font-size: 30px;
-    font-family: "Playfair Display", sans-serif;
+    font-size: 25px;
+    line-height: 40px;
+    font-family: "Edu TAS Beginner", sans-serif;
     text-align: justify;
+    color: #00000e;
 }
 .hand {
     animation-name: wave;  /* Refers to the name of your @keyframes element below */
@@ -1094,6 +1099,7 @@ text-shadow: 1px 1px black;
 
     .detail-container {
         font-size: 45px !important;
+
     }
     
     .nahom {
@@ -1107,6 +1113,10 @@ text-shadow: 1px 1px black;
             text-align: center;
         }
 
+        .specific {
+            margin-top: 0px;
+            font-size: 20px;
+        }
         .my-name {
             display: inline-block;
         }
@@ -1125,6 +1135,7 @@ text-shadow: 1px 1px black;
             position: relative;
             top: 0px;
             text-align: end;
+            margin: 20px 0;
         }
         
         .stack {
