@@ -118,7 +118,7 @@ li > a {
 
 section {
     position: relative;
-    min-height: 100dvh;
+    min-height: 100vh;
     background-color: var(--color-blue);
     padding: 150px 10%;
     margin:0;
@@ -253,8 +253,7 @@ header {
 }
 
 .navbar-toggler {
-    border-color: #D4AF37;
-    background: radial-gradient(white, #D4AF37, var(--bg-main) );
+        background: #D4AF37;
 
 }
 
@@ -860,7 +859,7 @@ img {
 }
 
 #messageInput {
-    min-height: 300px;
+    min-height: 250px;
     max-height: 600px;
 }
 
@@ -1002,7 +1001,7 @@ img {
 }
 
 .success {
-    border-color: #D4AF37;
+    border-color:   #D4AF37;
 
 }
 
@@ -1014,13 +1013,18 @@ img {
     padding: 10px 20px;
     background-color: rgb(179, 0, 0);
     color: white;
+    width: auto;
     -radius: 5px;
 }
-
+#feedback {
+    max-width: 90vw;
+}
 
 .success-div {
     margin: 10px 0;
     padding: 10px 20px;
+    width: auto;
+
     background-color: rgb(12, 179, 0);
     color: white;
     border-radius: 5px;
@@ -1247,6 +1251,7 @@ img {
 
 
 #Contact-Me {
+    padding: 120px;
     background: linear-gradient(rgb(246, 254, 255), var(--color-blue)70%, var(--bg-main) 96%);
 }
 

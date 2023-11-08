@@ -5,44 +5,22 @@ let scroll = true;
 let submitted = false;
 
     
-const helloWorld = [...document.querySelector('.display-container').querySelectorAll('.display')]
-const N = helloWorld.length;
-for (let i = 0; i < N; i++) {
-    setTimeout(function timer() {
-      helloWorld[i].style.display = 'block';
 
-    }, i * 250);
-  }
-
-
-
-    
-        
-
-
-
-console.log(document.querySelector('.hello-world'),document.querySelector('.hello-world').opacity)
-// document.querySelector('.hello-world').style.opacity  = '1';
-setTimeout(() => {
-    document.querySelector('.hand').style.animationName ='wave';
-    document.querySelector('.detail-container').style.opacity = '1';
-}, 2400)
-
-
-setTimeout(() => {
-    document.querySelector('.specific').style.opacity = '1';
-}, 5000)
+// start displaying element's inside About me section
+startAboutMe()
+// make where the window is display in and arrange navbar accordingly
 changeSection();
 
 // get div container for View Code and View Webiste
+
 document.querySelectorAll('.see').forEach(div => {
     // in each container get each button
     const hyperlink = div.querySelectorAll('a')
 
     // for each button prevent click event if button's opacity is below 0.8 
-    // this is to prevent accidental click because the button is not visible until user hover on that page
     hyperlink.forEach(element => {
         element.addEventListener("click", (event) => {
+            // this is to prevent accidental click because the button is not visible until user hover on that page
             if (parseFloat(window.getComputedStyle(div).getPropertyValue('opacity')) < 0.8 ) {
                 event.preventDefault()
             }
@@ -81,12 +59,16 @@ document.querySelectorAll('.see').forEach(div => {
 
 function changeSection() {
     // if the event not caused by hyperlink
-    if (scroll ) {
+    if (scroll) {
+        // get the navbar container
         const navbar = document.getElementById('navbarNav');
+        // get all the section
         document.querySelectorAll('section').forEach(section => {
             const total = Math.floor(Math.abs(section.getBoundingClientRect().bottom) + (Math.abs(section.getBoundingClientRect().top)));
             const height = Math.floor(section.getBoundingClientRect().height);
+            // if the section is inside window display
             if (  total === height) {
+                // get which section it is and make change on Navbar
                 const name = section.dataset.name;
                 const currentLi = navbar.querySelector(`.${name}`);
 
@@ -98,19 +80,16 @@ function changeSection() {
 }
 
 
+// get bootsrap's togggler
 const toggler = document.querySelector('.navbar-toggler')
 
 
 
 // Get the navbar container
 document.querySelector('.navbar-nav').querySelectorAll('a').forEach(a => {
-    // For each nav-links clicked if the nav bar is collapsed make the page not covered by the navbar
     a.addEventListener('click', () => {
-        console.log(toggler)
-        console.log(window.getComputedStyle(toggler).display)
-
+        // For each nav-links clicked if the nav bar is collapsed make the page not covered by the navbar
         if (!(window.getComputedStyle(toggler).display === 'none')) {
-            console.log(toggler)
             toggler.click()
         } 
     })
@@ -128,7 +107,7 @@ document.getElementById('messageInput').addEventListener("input", (event) => {
 
 
 
-
+// contact me page submittion
 document.getElementById('send').addEventListener('click', (event) => {
      event.preventDefault()
      // make the submittion varible false
@@ -141,11 +120,12 @@ document.getElementById('send').addEventListener('click', (event) => {
 
     // create an array to go for each of them 
     const data = [name, email, message]
+
     //  empty array for empty element in the above fields
     let empty = new Array();
 
+    
     // check if there are empty field
-
     data.forEach(info => {
         if ( info.value.trim() === '') {
             empty.push(info);
@@ -156,9 +136,11 @@ document.getElementById('send').addEventListener('click', (event) => {
     if (empty.length > 0) {
         // change their style and give user Text description
         empty.forEach(none => {
+            // change class name so give user visual effect 
             changeClassName([none], "contact-form error")
-            document.querySelector('#feedback').innerHTML = "All Fields are required";
-           changeClassName([document.querySelector('#feedback')],"error-div");
+            changeClassName([document.querySelector('#feedback')],"error-div");
+
+            document.querySelector('#feedback').innerHTML = "All Fields are required!";
        
         }) 
 
@@ -180,9 +162,8 @@ document.getElementById('send').addEventListener('click', (event) => {
         return;
     }
 
-    // No Error so send the email 
 
-    // Sending the data
+    // No error so sending the data
     fetch("https://formsubmit.co/ajax/646613eabd667d1f253d05d759e2ebef", {
         method: "POST",
         headers: { 
@@ -190,6 +171,7 @@ document.getElementById('send').addEventListener('click', (event) => {
             'Accept': 'application/json'
         },
         body: JSON.stringify({
+            // send name, email, and message
             name: name.value,
             email: email.value,
             message: message.value
@@ -197,6 +179,7 @@ document.getElementById('send').addEventListener('click', (event) => {
     })
     .then(response => response.json())
     .then(data => {
+
         //  returning a Thank you message for the user if it is successful
         if (data.success ) {
             email.value = '';
@@ -205,11 +188,10 @@ document.getElementById('send').addEventListener('click', (event) => {
 
             changeClassName([data], "contact-form")
 
-            // "Your form is sumbmitted successfully and I appricetate that's I will contact you As Soon as possible"
-            //Your form is submitted successfully, Thank you for contacting and I will get back you as soon as possible'. We have received your inquiry and will get back to you within two business days. In the interim, please visit our blog. We’ve chosen for you some of our most popular articles.
-            // Thank you for contacting us. We have received your inquiry and will get back to you within two business days. In the interim, please visit our blog. We’ve chosen for you some of our most popular articles.
+            // Show success message
             document.querySelector('#feedback').innerHTML = "<strong> Thank you </strong> for contacting us and I will get back to you as soon as possible.";
             changeClassName([document.querySelector('#feedback')], "success-div");
+            // change submitted variable so checkChange and checkEmail stop checking input fields
             submitted = true;
           }
     })
@@ -219,15 +201,13 @@ document.getElementById('send').addEventListener('click', (event) => {
 });
 
 
-
 function checkChange(empty) {
 
-    // check until the page is submitted
-    console.log(submitted)
     
     // for each empty field check if they are not empty.
     empty.forEach(field => {
         field.addEventListener('input', () => {
+            // if submitted only false changing their input field border color
                 if (!submitted) {
                     if (field.value.trim().length > 0) {
                         changeClassName([field], "contact-form success")
@@ -237,18 +217,11 @@ function checkChange(empty) {
                 }
             })
         })
+
     }
 
-function validate(email) {
-    var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-    //var address = document.getElementById[email].value;
-    return (reg.test(email) == false) 
-  
-}
 
-
-function checkEmail(email) {
-    
+function checkEmail(email) { 
 
     email.addEventListener('input', () => {
             if (!submitted) {
@@ -261,6 +234,18 @@ function checkEmail(email) {
             }
         })
     }
+
+
+// check if the email is vaild or not 
+function validate(email) {
+    var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+    //var address = document.getElementById[email].value;
+    return (reg.test(email) == false) 
+  
+}
+
+
+
 
 
 function changeNavbar(container, newlink) {
@@ -279,3 +264,29 @@ function changeClassName(inputs, values) {
     })
 }
 
+
+
+
+function startAboutMe() {
+
+    // get each letter of Hello world
+    const helloWorld = [...document.querySelector('.display-container').querySelectorAll('.display')]
+    // then display then consecutively 
+    for (let i = 0, N=helloWorld.length; i < N; i++) {
+        setTimeout(function timer() {
+            helloWorld[i].style.display = 'block';
+        }, i * 250);
+    }
+
+    // start waving the hand and then display the name and full stack section
+    setTimeout(() => {
+        document.querySelector('.hand').style.animationName ='wave';
+        document.querySelector('.detail-container').style.opacity = '1';
+    }, 3000)
+
+    // display  the detail text in about me section
+    setTimeout(() => {
+        document.querySelector('.specific').style.opacity = '1';
+    }, 5000)
+
+}
