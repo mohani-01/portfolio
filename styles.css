@@ -47,15 +47,11 @@
 .spacer-edu {
     aspect-ratio:900/675;
     width: 100dvw;
-    
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-.education-harvard {
-    background-image: url('images/svg/circle-background.svg');
-}
 body {
     position: relative;
     margin: 0;
@@ -913,11 +909,9 @@ img {
     position: absolute;
     right: 0;
     left: 0;
-    /* z-index: 2000; */
     bottom: auto;
     height: 320px;
     background-color: white;
-    /* border: 2px solid green; */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -926,22 +920,10 @@ img {
 
 .layer  {
     background-image: url('images/svg/steps.svg');
-    /* border: 1px solid #0a4fb8; */
-    
-}
-
-.layer1 {
-    background-image: url('images/svg/circle-scatter-haikei.svg');
 }
 
 
-.new-spacer {
-    aspect-ratio: 960/250;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
+
 
 
 .custom-shape-divider-bottom-1699120156 {
