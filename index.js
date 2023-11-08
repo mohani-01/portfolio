@@ -2,17 +2,15 @@
 let scroll = true;
 
 // check if submission is completed
-let submitted = false;
-
-    
+let submitted = false;    
 
 // start displaying element's inside About me section
 startAboutMe()
 // make where the window is display in and arrange navbar accordingly
 changeSection();
 
-// get div container for View Code and View Webiste
 
+// get div container for View Code and View Webiste
 document.querySelectorAll('.see').forEach(div => {
     // in each container get each button
     const hyperlink = div.querySelectorAll('a')
@@ -20,6 +18,7 @@ document.querySelectorAll('.see').forEach(div => {
     // for each button prevent click event if button's opacity is below 0.8 
     hyperlink.forEach(element => {
         element.addEventListener("click", (event) => {
+
             // this is to prevent accidental click because the button is not visible until user hover on that page
             if (parseFloat(window.getComputedStyle(div).getPropertyValue('opacity')) < 0.8 ) {
                 event.preventDefault()
@@ -28,33 +27,28 @@ document.querySelectorAll('.see').forEach(div => {
     });
 })
 
-    // get the navbar link contiainer
-    const navbar = document.getElementById('navbarNav');
+// get the navbar link contiainer
+const navbar = document.getElementById('navbarNav');
 
-    navbar.querySelectorAll('a').forEach(ahref => {
-        // get all a href element's and if they are clicked change scroll variable to false 
-        // to remove unnecessary css effect on the navbar elements
-        ahref.addEventListener('click', () => {
-            scroll = false
-            // change style of current navbar 
-            changeNavbar(navbar, ahref)
-           
-            window.addEventListener('scrollend', () => {
-                scroll = true
-            })
-
+navbar.querySelectorAll('a').forEach(ahref => {
+    // get all a href element's and if they are clicked change scroll variable to false 
+    // to remove unnecessary css effect on the navbar elements
+    ahref.addEventListener('click', () => {
+        scroll = false
+        // change style of current navbar 
+        changeNavbar(navbar, ahref)
+        
+        window.addEventListener('scrollend', () => {
+            scroll = true
         })
+
     })
+})
 
-    // listen for scroll and change current section
-    window.addEventListener('scroll', () => {
-        changeSection()
-       
-    })
-
-   
-
-
+// listen for scroll and change current section
+window.addEventListener('scroll', () => {
+    changeSection()
+})
 
 
 function changeSection() {
@@ -76,14 +70,10 @@ function changeSection() {
             }
         })
     }
-   
 }
-
 
 // get bootsrap's togggler
 const toggler = document.querySelector('.navbar-toggler')
-
-
 
 // Get the navbar container
 document.querySelector('.navbar-nav').querySelectorAll('a').forEach(a => {
@@ -95,7 +85,6 @@ document.querySelector('.navbar-nav').querySelectorAll('a').forEach(a => {
     })
 })
 
-
 // resize the message page in contact-me section
 document.getElementById('messageInput').addEventListener("input", (event) => {
     const textarea = event.target;
@@ -103,11 +92,7 @@ document.getElementById('messageInput').addEventListener("input", (event) => {
     textarea.style.height = textarea.scrollHeight + 24 + 'px';     
 })
 
-
-
-
-
-// contact me page submittion
+// contact me page submission
 document.getElementById('send').addEventListener('click', (event) => {
      event.preventDefault()
      // make the submittion varible false
@@ -139,7 +124,7 @@ document.getElementById('send').addEventListener('click', (event) => {
             // change class name so give user visual effect 
             changeClassName([none], "contact-form error")
             changeClassName([document.querySelector('#feedback')],"error-div");
-
+            // Give user Textual description about what happen
             document.querySelector('#feedback').innerHTML = "All Fields are required!";
        
         }) 
@@ -191,6 +176,7 @@ document.getElementById('send').addEventListener('click', (event) => {
             // Show success message
             document.querySelector('#feedback').innerHTML = "<strong> Thank you </strong> for contacting us and I will get back to you as soon as possible.";
             changeClassName([document.querySelector('#feedback')], "success-div");
+
             // change submitted variable so checkChange and checkEmail stop checking input fields
             submitted = true;
           }
@@ -202,7 +188,6 @@ document.getElementById('send').addEventListener('click', (event) => {
 
 
 function checkChange(empty) {
-
     
     // for each empty field check if they are not empty.
     empty.forEach(field => {
@@ -217,14 +202,14 @@ function checkChange(empty) {
                 }
             })
         })
-
     }
 
 
 function checkEmail(email) { 
 
     email.addEventListener('input', () => {
-            if (!submitted) {
+        // Check if the form is in the process fo submission
+            if (!submitted ) {
                 if (validate(email.value)) {
                     changeClassName([email], "contact-form success")   
                 } else {
@@ -245,18 +230,18 @@ function validate(email) {
 }
 
 
-
-
-
 function changeNavbar(container, newlink) {
+    // remove navbar-hover: class name which change display of nav-link in navbar from every element and 
     container.querySelectorAll('a').forEach(link => {
         link.classList.remove('navbar-hover')
     })
+
+    // Only add it to the current section
     newlink.classList.add('navbar-hover');
 }
 
 
-
+// change class name
 function changeClassName(inputs, values) {
     inputs.forEach(input => {
         input.className = "";
@@ -266,7 +251,7 @@ function changeClassName(inputs, values) {
 
 
 
-
+// Visual effect at the start on load and reload
 function startAboutMe() {
 
     // get each letter of Hello world
