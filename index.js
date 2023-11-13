@@ -170,6 +170,7 @@ document.getElementById('send').addEventListener('click', (event) => {
             email.value = '';
             name.value = '';
             message.value = '';
+            
 
             changeClassName([data], "contact-form")
 

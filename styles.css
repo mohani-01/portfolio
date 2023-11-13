@@ -8,7 +8,7 @@
 }
 
 #section-about-me {
-    background: linear-gradient(200deg, #000219 , #ffffff 60%);
+    background: linear-gradient(200deg, #000219 , #dcdcdc );
     padding-top: 100px;
 }
 
@@ -907,7 +907,7 @@ img {
 .full-stack .nahom {
     font-style: normal;
     text-shadow: 4px 4px #00000e;
-    background: -webkit-linear-gradient(-90deg,#ff0000, silver, white);
+    background: -webkit-linear-gradient(-90deg,#ff0000, orange, goldenrod );
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -933,7 +933,7 @@ img {
     font-family: "Roboto", sans-serif;
     color: black;
     text-align: justify;
-    text-shadow: 1px .4px whitesmoke;
+    text-shadow: 1px .4px var(--color-blue);
     opacity: 0;
     transition: opacity 500ms linear;
 }
