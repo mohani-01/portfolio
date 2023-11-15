@@ -3,11 +3,17 @@ let scroll = true;
 
 // check if submission is completed
 let submitted = false;    
+// make where the window is display in and arrange navbar accordingly
+changeSection();
+
+const csrf_input = document.getElementById('csrf');
+const csrf_token = getCookie('csrftoken');
+console.log(csrf_input, csrf_input.value)
+csrf_input.value = csrf_token;
+console.log(csrf_input, csrf_input.value)
 
 // start displaying element's inside About me section
 startAboutMe()
-// make where the window is display in and arrange navbar accordingly
-changeSection();
 
 
 // get div container for View Code and View Webiste
@@ -275,4 +281,21 @@ function startAboutMe() {
         document.querySelector('.specific').style.opacity = '1';
     }, 5000)
 
+}
+
+
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
 }

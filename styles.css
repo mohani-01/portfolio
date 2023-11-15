@@ -543,7 +543,7 @@ img {
     cursor: default;
 }
 
-.see button:hover {
+.view-project:hover {
     border-color: #2179ac;
 }
 
@@ -560,7 +560,7 @@ img {
     height: max-content;
 }
 
-.see  button {
+.view-project {
     border-radius: 10px;
     cursor: pointer;
     padding: 10px 20px;
@@ -642,7 +642,7 @@ img {
         font-size: 1.1rem ;
     }
 
-    .see button {
+    .view-project {
         padding: 7px 15px;
         font-size: 16px;
     }
@@ -683,7 +683,7 @@ img {
         font-size: 14px;
     }
 
-    .see button {
+    .view-project {
         padding: 3px 10px;
         font-size: 14px;
     }
@@ -1061,4 +1061,8 @@ img {
     z-index: 200;
     color: #D4AF37;
     margin-bottom: 20px;
+}
+
+.form-display {
+    display: none;
 }
