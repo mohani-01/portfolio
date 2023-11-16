@@ -224,7 +224,7 @@ header {
     height:auto;
 }
 
-.container-fluid{
+.container-fluid {
     justify-content: flex-end !important;
 }
 .navbar-nav{
@@ -539,9 +539,11 @@ img {
     opacity: 1;
 }
 
+
 .see a {
     cursor: default;
 }
+
 
 .view-project:hover {
     border-color: #2179ac;
@@ -573,7 +575,7 @@ img {
 }
 
 .description:hover .note{
-    opacity: .5;
+    opacity: .6;
 }
 
 .title > h3 {
@@ -590,6 +592,7 @@ img {
     text-align: end;
     padding: 0 20px;
 }
+
 
 .image-container .image {
     width: 95%;
@@ -625,6 +628,12 @@ img {
 
 .image-container:hover .developed  {
     opacity: 1;
+}
+
+
+
+.frontend:hover {
+    text-decoration: underline;
 }
 
 
