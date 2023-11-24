@@ -6,12 +6,6 @@ let submitted = false;
 // make where the window is display in and arrange navbar accordingly
 changeSection();
 
-const csrf_input = document.getElementById('csrf');
-const csrf_token = getCookie('csrftoken');
-console.log(csrf_input, csrf_input.value)
-csrf_input.value = csrf_token;
-console.log(csrf_input, csrf_input.value)
-
 // start displaying element's inside About me section
 startAboutMe()
 
@@ -273,7 +267,7 @@ function startAboutMe() {
     // start waving the hand and then display the name and full stack section
     setTimeout(() => {
         document.querySelector('.hand').style.animationName ='wave';
-        document.querySelector('.detail-container').style.opacity = '1';
+        // document.querySelector('.detail-container').style.opacity = '1';
     }, 3000)
 
     // display  the detail text in about me section
@@ -284,18 +278,3 @@ function startAboutMe() {
 }
 
 
-function getCookie(name) {
-    let cookieValue = null;
-    if (document.cookie && document.cookie !== '') {
-        const cookies = document.cookie.split(';');
-        for (let i = 0; i < cookies.length; i++) {
-            const cookie = cookies[i].trim();
-            // Does this cookie string begin with the name we want?
-            if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                break;
-            }
-        }
-    }
-    return cookieValue;
-}

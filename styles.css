@@ -894,55 +894,43 @@ img {
     font-size: 55px;
     font-family: "Roboto", sans-serif;
     height: max-content;
-    opacity: 0;
+    opacity: 1;
     transition: opacity 3000ms ease-in;
 }
 
-
 .my-name {
     position: relative;
-    font-family: "Ultra", sans-serif;
+    font-family: "Carter One", sans-serif;
+    color: white;
+    text-shadow: -2px -4px rgb(0, 183, 255);
+    font-weight: 100 !important;
+}
+
+
+.full-stack {
+    font-family: "Carter One", sans-serif;
     color: black;
-
-}
-
-.my-name .nahom {
-    text-shadow: 2px 4px skyblue;
-
-}
-.nahom  {
-    font-size: 65px !important;
-}
-.full-stack .nahom {
-    font-style: normal;
-    text-shadow: 4px 4px #00000e;
+    box-sizing: border-box;
+    font-size: 45px;
+    text-shadow: 1px 4px white;
     background: -webkit-linear-gradient(-90deg,#ff0000, orange, goldenrod );
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
 }
-
-.full-stack {
-    font-family: "Carter One", sans-serif;
-    color: black;
-    box-sizing: border-box;
-    position: absolute;
-    text-align: right;
-    left: 0px;
-    top: 120px;
-    padding: 10px;
-
+.br {
+    display: block;
+    margin: 1rem;
 }
 
 .specific {
-    margin-top: 150px;
-    padding: 20px;
+    padding: 40px 20px;
     font-size: 25px;
     font-family: "Roboto", sans-serif;
-    color: black;
+    color: rgb(236, 236, 236);
     text-align: justify;
-    text-shadow: 1px .4px var(--color-blue);
+    text-shadow: 2px 2px var(--color-blue);
     opacity: 0;
     transition: opacity 500ms linear;
 }
@@ -966,76 +954,43 @@ img {
   }
   
 
-@media only screen and (max-width:980px) {
-    .detail-container {
-        font-size: 45px !important;
-
-    }
-    
-    .nahom {
-        font-size: 55px !important;
-    }
-}
-
-@media only screen and (max-width:740px) {
+@media only screen and (max-width:768px) {
     .hello-world {
         font-size: 45px;
+    }
+    .display-container {
+        justify-content: center ;
+    }
+
+    .my-name {
+        font-size: 44px;
         text-align: center;
     }
 
-    .specific {
-        padding: 10px 20px;
-        margin-top: 0px;
-        font-size: 20px;
-    }
-    .my-name {
-        display: inline-block;
-    }
-
-    .detail-container, .full-stack {
-        font-size: 35px !important;
-        text-align: start;
-    }
-    
-    .full-stack {
-        display: flex;
-        justify-content: end;
-        flex-wrap: wrap;
-        position: relative;
-        top: 0px;
-        text-align: end;
-        margin: 15px 0;
-    }
-    
-    .stack {
-        display: inline-flex;
-    }
-
-    .nahom-container {
-        display: inline-flex;
-    }
-
-    .nahom {
-        display: inline;
-        font-size: 40px !important;
-        margin-right: 10px;
+     .full-stack {
+        text-align: center;
+        font-size: 47px;
     }
 }
     
-@media only screen and (max-width:380px) {
+@media only screen and (max-width:600px) {
     .hello-world {
-        font-size: 35px;
-    }
-    .my-name .nahom {
-        font-size: 30px !important;
+        font-size: 38px;
     }
 
-    .full-stack .nahom {
-        font-size: 35px !important;
+    .my-name {
+        font-size: 35px;
+        text-shadow: -1px -2px rgb(0, 183, 255);
     }
-    
-    .detail-container, .full-stack {
-        font-size: 25px !important;
+} 
+
+@media only screen and (max-width:480px) {
+    .my-name {
+        font-size: 25px;
+    }
+    .full-stack {
+        font-size: 35px;
+        text-shadow: 1px 2.5px white;
     }
 }
 
@@ -1053,7 +1008,6 @@ img {
 .display-container {
     display: flex;
     align-items: center;
-    justify-content: start;
 }
 
 .space {
