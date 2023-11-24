@@ -876,10 +876,14 @@ img {
     user-select: none;
 }
 
-
 .main-container {
     position: relative;
     height: max-content;
+}
+
+#nameTitle {
+    opacity: 0;
+    transition: opacity 3000ms ease-in;
 }
 
 .hello-world {
@@ -888,14 +892,13 @@ img {
     font-weight: 800;
 }
 
+
 .detail-container {
     position: relative;
     text-align: right;
     font-size: 55px;
     font-family: "Roboto", sans-serif;
     height: max-content;
-    opacity: 1;
-    transition: opacity 3000ms ease-in;
 }
 
 .my-name {
@@ -911,7 +914,7 @@ img {
     font-family: "Carter One", sans-serif;
     color: black;
     box-sizing: border-box;
-    font-size: 45px;
+    font-size: 55px;
     text-shadow: 1px 4px white;
     background: -webkit-linear-gradient(-90deg,#ff0000, orange, goldenrod );
     background-clip: text;

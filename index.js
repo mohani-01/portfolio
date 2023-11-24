@@ -267,7 +267,7 @@ function startAboutMe() {
     // start waving the hand and then display the name and full stack section
     setTimeout(() => {
         document.querySelector('.hand').style.animationName ='wave';
-        // document.querySelector('.detail-container').style.opacity = '1';
+        document.querySelector('#nameTitle').style.opacity = '1';
     }, 3000)
 
     // display  the detail text in about me section
